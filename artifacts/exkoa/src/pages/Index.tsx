@@ -8,6 +8,7 @@ import { ImpactStories } from "@/components/ImpactStories";
 import { DeliverySimulator } from "@/components/DeliverySimulator";
 import { TrackingMap } from "@/components/TrackingMap";
 import { Testimonials } from "@/components/Testimonials";
+import { Mission } from "@/components/Mission";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <Mission />
         <HowItWorks />
         <AngolaQuotes />
         <ImpactStories />
