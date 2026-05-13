@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "produtores": "Producers",
+    "transportadores": "Transporters",
+    "compradores": "Buyers",
+    "mercado": "Marketplace",
+    "rastreamento": "Tracking",
+    "cta": "Get Started",
+    "login": "Sign in"
+  },
+  "hero": {
+    "eyebrow": "AGRITECH · ANGOLA · AFRICA",
+    "title1": "From the Field",
+    "title2": "To Your Table.",
+    "sub": "Connecting producers, transporters and buyers with transparent pricing, smart logistics and real-time tracking.",
+    "ctaPrimary": "Explore Marketplace",
+    "ctaSecondary": "See How It Works",
+    "stats": "2,400+ Producers · 180+ Transporters · 12 Countries"
+  },
+  "how": {
+    "title": "From Production to Delivery",
+    "step1Title": "Production",
+    "step1Desc": "List your product with volume-based pricing.",
+    "step2Title": "Transport",
+    "step2Desc": "Routes calculated automatically, optimized logistics.",
+    "step3Title": "Delivery",
+    "step3Desc": "Track in real time to the final destination."
+  },
+  "market": {
+    "title": "Commodities Market",
+    "sub": "Transparent bulk pricing. 20 non-perishable commodities.",
+    "viewAll": "View all",
+    "perKg": "per kg",
+    "perTon": "per ton",
+    "available": "Available",
+    "buy": "Buy"
+  },
+  "sim": {
+    "title": "Delivery Simulator",
+    "sub": "Estimate lead times and cost ranges for your route.",
+    "origin": "Origin",
+    "destination": "Destination",
+    "weight": "Weight (kg)",
+    "calc": "Calculate",
+    "result": "Estimated delivery in {{days}} · cost {{cost}} AOA"
+  },
+  "track": { "title": "Real-Time Tracking", "sub": "See all active shipments in motion." },
+  "testimonials": { "title": "Trusted by industry leaders" },
+  "footer": {
+    "tagline": "Connecting the field to the future.",
+    "company": "Company", "platform": "Platform", "support": "Support", "legal": "Legal"
+  },
+  "auth": {
+    "login": "Sign in", "signup": "Sign up",
+    "name": "Full name", "email": "Email", "password": "Password",
+    "phone": "Phone", "country": "Country", "role": "I am a",
+    "produtor": "Producer", "transportador": "Transporter", "comprador": "Buyer",
+    "submit": "Continue"
+  }
+}
