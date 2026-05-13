@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "produtores": "Productores",
+    "transportadores": "Transportistas",
+    "compradores": "Compradores",
+    "mercado": "Mercado",
+    "rastreamento": "Rastreo",
+    "cta": "Comenzar",
+    "login": "Iniciar sesión"
+  },
+  "hero": {
+    "eyebrow": "AGRITECH · ANGOLA · ÁFRICA",
+    "title1": "Del Campo Directo",
+    "title2": "A Tu Mesa.",
+    "sub": "Conectamos productores, transportistas y compradores con precios transparentes, logística inteligente y rastreo en tiempo real.",
+    "ctaPrimary": "Explorar el Mercado",
+    "ctaSecondary": "Ver Cómo Funciona",
+    "stats": "2.400+ Productores · 180+ Transportistas · 12 Países"
+  },
+  "how": {
+    "title": "De la Producción a la Entrega",
+    "step1Title": "Producción",
+    "step1Desc": "Registra tu producto con precios por volumen.",
+    "step2Title": "Transporte",
+    "step2Desc": "Rutas calculadas automáticamente, logística optimizada.",
+    "step3Title": "Entrega",
+    "step3Desc": "Acompaña en tiempo real hasta el destino final."
+  },
+  "market": {
+    "title": "Mercado de Commodities",
+    "sub": "Precios transparentes por volumen. 20 commodities no perecederos.",
+    "viewAll": "Ver todos",
+    "perKg": "por kg",
+    "perTon": "por tonelada",
+    "available": "Disponible",
+    "buy": "Comprar"
+  },
+  "sim": {
+    "title": "Simulador de Entrega",
+    "sub": "Calcula plazos y costos estimados para tu ruta.",
+    "origin": "Origen",
+    "destination": "Destino",
+    "weight": "Peso (kg)",
+    "calc": "Calcular",
+    "result": "Entrega estimada en {{days}} · costo {{cost}} AOA"
+  },
+  "track": { "title": "Rastreo en Tiempo Real", "sub": "Mira todas las cargas activas en movimiento." },
+  "testimonials": { "title": "Confían en EXKOA" },
+  "footer": {
+    "tagline": "Conectando el campo al futuro.",
+    "company": "Empresa", "platform": "Plataforma", "support": "Soporte", "legal": "Legal"
+  },
+  "auth": {
+    "login": "Iniciar sesión", "signup": "Registrarse",
+    "name": "Nombre completo", "email": "Email", "password": "Contraseña",
+    "phone": "Teléfono", "country": "País", "role": "Yo soy",
+    "produtor": "Productor", "transportador": "Transportista", "comprador": "Comprador",
+    "submit": "Continuar"
+  }
+}

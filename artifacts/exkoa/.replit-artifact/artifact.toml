@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "EXKOA"
+version = "1.0.0"
+id = "artifacts/exkoa"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25981
+
+[services.development]
+run = "pnpm --filter @workspace/exkoa run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/exkoa", "run", "build" ]
+publicDir = "artifacts/exkoa/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25981"
+BASE_PATH = "/"

@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EXKOA Design System — all colors HSL */
+@layer base {
+  :root {
+    --background: 60 14% 95%;          /* #FAFAF8 */
+    --foreground: 75 14% 5%;           /* #0F1109 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 75 14% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 75 14% 5%;
+
+    --primary: 121 41% 30%;            /* #2D6A2E */
+    --primary-foreground: 60 14% 98%;
+    --primary-light: 121 31% 42%;      /* #4A8C4B */
+
+    --secondary: 75 10% 92%;
+    --secondary-foreground: 75 14% 12%;
+
+    --muted: 75 10% 92%;
+    --muted-foreground: 80 7% 35%;     /* #5C6153 */
+
+    --accent: 44 56% 54%;              /* #C9A84C harvest gold */
+    --accent-foreground: 75 14% 5%;
+
+    --destructive: 6 65% 46%;          /* #C0392B */
+    --destructive-foreground: 60 14% 98%;
+
+    --success: 121 33% 36%;            /* #3D7A3E */
+
+    --border: 72 13% 90%;              /* #E8EAE3 */
+    --input: 72 13% 90%;
+    --ring: 121 41% 30%;
+
+    --radius: 1rem;
+
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+    --shadow-elevated: 0 8px 40px rgba(0,0,0,0.10);
+  }
+
+  .dark {
+    --background: 75 14% 4%;           /* #0C0D0A */
+    --foreground: 60 14% 95%;
+
+    --card: 72 12% 8%;                 /* #161712 */
+    --card-foreground: 60 14% 95%;
+
+    --popover: 72 12% 8%;
+    --popover-foreground: 60 14% 95%;
+
+    --primary: 121 31% 42%;
+    --primary-foreground: 75 14% 5%;
+    --primary-light: 121 31% 55%;
+
+    --secondary: 72 12% 13%;
+    --secondary-foreground: 60 14% 95%;
+
+    --muted: 72 12% 13%;
+    --muted-foreground: 80 7% 60%;
+
+    --accent: 44 56% 54%;
+    --accent-foreground: 75 14% 5%;
+
+    --destructive: 6 65% 46%;
+    --destructive-foreground: 60 14% 98%;
+
+    --success: 121 33% 46%;
+
+    --border: 75 10% 14%;              /* #2A2D22 */
+    --input: 75 10% 14%;
+    --ring: 121 31% 55%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { font-family: 'Inter', system-ui, sans-serif; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.03em;
+  }
+  .label-caps {
+    @apply text-xs font-medium uppercase;
+    letter-spacing: 0.08em;
+  }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1280px] px-6 md:px-10; }
+  .section-y { @apply py-16 md:py-[120px]; }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-all duration-200 hover:scale-[1.02] hover:shadow-elevated;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-[10px] px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:underline underline-offset-4;
+  }
+  .card-surface {
+    @apply rounded-2xl bg-card border border-border;
+    box-shadow: var(--shadow-card);
+  }
+  .input-base {
+    @apply w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/30;
+  }
+}
+
+/* Unified icon system — all lucide icons use 1.5 stroke for a consistent, premium look */
+@layer base {
+  svg.lucide { stroke-width: 1.5; }
+}
+
+/* Pulse ring animation for map markers */
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.pulse-ring::before {
+  content: ""; position: absolute; inset: 0; border-radius: 9999px;
+  background: hsl(var(--primary) / 0.45);
+  animation: pulse-ring 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Dashed connector animation */
+@keyframes dash-flow { to { background-position: 24px 0; } }
+.dash-flow {
+  background-image: linear-gradient(90deg, hsl(var(--primary)) 50%, transparent 50%);
+  background-size: 12px 2px; background-repeat: repeat-x;
+  background-position: 0 50%;
+  animation: dash-flow 1.4s linear infinite;
+}
