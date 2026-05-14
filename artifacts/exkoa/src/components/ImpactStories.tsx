@@ -23,11 +23,29 @@ const stories = [
     title: "Tecnologia que respeita o campo",
     desc: "Conectamos a sabedoria do agricultor com ferramentas digitais simples e poderosas.",
   },
+  {
+    img: "/impact-transport.jpg",
+    tag: "Transporte",
+    title: "Logística que chega onde a estrada acaba",
+    desc: "Os nossos parceiros transportadores garantem que a colheita chega ao destino com segurança, mesmo nas rotas mais remotas.",
+  },
+  {
+    img: "/impact-market.jpg",
+    tag: "Mercado",
+    title: "Mercados locais, alcance continental",
+    desc: "O que antes ficava limitado à vila agora chega a compradores em todo o país — com preços justos e sem burocracia.",
+  },
+  {
+    img: "/impact-seller.jpg",
+    tag: "Vendedora",
+    title: "Mais rendimento, mais independência",
+    desc: "Com a EXKOA, vendedoras como a Amélia triplicaram as suas vendas usando apenas um telemóvel e a nossa plataforma.",
+  },
 ];
 
 export const ImpactStories = () => {
   return (
-    <section className="section-y border-t border-border bg-background">
+    <section id="impacto" className="section-y border-t border-border bg-background">
       <div className="container-x">
         <div className="max-w-3xl">
           <p className="label-caps text-primary">Impacto</p>

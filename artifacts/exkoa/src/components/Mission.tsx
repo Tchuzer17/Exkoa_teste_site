@@ -1,6 +1,6 @@
 const Mission = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="quem-somos" className="py-20 bg-white">
       <div className="container max-w-content mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">

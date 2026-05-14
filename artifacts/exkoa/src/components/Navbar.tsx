@@ -29,6 +29,8 @@ export const Navbar = () => {
     { to: "/compradores", label: t("nav.compradores") },
     { to: "/mercado", label: t("nav.mercado") },
     { to: "/rastreamento", label: t("nav.rastreamento") },
+    { to: "/#impacto", label: "Impacto", anchor: true },
+    { to: "/#quem-somos", label: "Quem Somos", anchor: true },
   ];
 
   return (
@@ -41,17 +43,27 @@ export const Navbar = () => {
         <Logo />
 
         <nav className="hidden lg:flex items-center gap-7">
-          {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              className={({ isActive }) =>
-                `text-[15px] transition-colors ${isActive ? "text-foreground font-semibold" : "text-foreground/80 hover:text-primary"}`
-              }
-            >
-              {l.label}
-            </NavLink>
-          ))}
+          {links.map((l) =>
+            l.anchor ? (
+              <a
+                key={l.to}
+                href={l.to}
+                className="text-[15px] transition-colors text-foreground/80 hover:text-primary"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                className={({ isActive }) =>
+                  `text-[15px] transition-colors ${isActive ? "text-foreground font-semibold" : "text-foreground/80 hover:text-primary"}`
+                }
+              >
+                {l.label}
+              </NavLink>
+            )
+          )}
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
@@ -92,16 +104,27 @@ export const Navbar = () => {
       {open && (
         <div className="lg:hidden border-t border-border bg-background animate-fade-up">
           <div className="container-x py-4 flex flex-col gap-1">
-            {links.map((l) => (
-              <NavLink
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="py-3 text-base font-medium text-foreground"
-              >
-                {l.label}
-              </NavLink>
-            ))}
+            {links.map((l) =>
+              l.anchor ? (
+                <a
+                  key={l.to}
+                  href={l.to}
+                  onClick={() => setOpen(false)}
+                  className="py-3 text-base font-medium text-foreground"
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="py-3 text-base font-medium text-foreground"
+                >
+                  {l.label}
+                </NavLink>
+              )
+            )}
             <div className="flex items-center gap-3 pt-3 border-t border-border mt-2">
               <button onClick={toggle} className="rounded-lg p-2 hover:bg-secondary" aria-label="Theme">
                 {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
