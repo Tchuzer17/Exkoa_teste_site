@@ -35,8 +35,8 @@ const Mission = () => {
             </div>
             <div className="flex gap-8 pt-2">
               <div>
-                <p className="text-3xl font-bold font-display text-primary">3+</p>
-                <p className="text-sm text-muted-foreground mt-1">Países em África</p>
+                <p className="text-3xl font-bold font-display text-primary">21</p>
+                <p className="text-sm text-muted-foreground mt-1">Províncias em Angola</p>
               </div>
               <div>
                 <p className="text-3xl font-bold font-display text-primary">500+</p>

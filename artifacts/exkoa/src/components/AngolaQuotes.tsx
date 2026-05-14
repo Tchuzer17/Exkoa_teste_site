@@ -1,11 +1,41 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useMemo, useState } from "react";
-import { products, regions, type Region } from "@/data/products";
+import { products, type Region } from "@/data/products";
 import { ChevronDownIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import angolaMap from "@/assets/angola-map.png";
 
+const ALL_PROVINCES = [
+  "Luanda", "Benguela", "Huíla", "Huambo", "Malanje", "Cabinda",
+  "Zaire", "Uíge", "Bengo", "Cuanza Norte", "Cuanza Sul",
+  "Lunda Norte", "Lunda Sul", "Bié", "Moxico",
+  "Namibe", "Cuando Cubango", "Cunene",
+] as const;
+
+type Province = typeof ALL_PROVINCES[number];
+
+const PROVINCE_COORDS: Record<Province, [number, number]> = {
+  "Cabinda":        [22,  6],
+  "Zaire":          [19, 14],
+  "Uíge":           [33, 21],
+  "Luanda":         [16, 29],
+  "Bengo":          [21, 33],
+  "Cuanza Norte":   [29, 36],
+  "Malanje":        [43, 29],
+  "Lunda Norte":    [63, 22],
+  "Cuanza Sul":     [24, 45],
+  "Benguela":       [16, 53],
+  "Huambo":         [30, 53],
+  "Bié":            [44, 51],
+  "Lunda Sul":      [64, 38],
+  "Moxico":         [68, 53],
+  "Namibe":         [13, 66],
+  "Huíla":          [30, 66],
+  "Cuando Cubango": [60, 69],
+  "Cunene":         [28, 81],
+};
+
 export const AngolaQuotes = () => {
-  const [region, setRegion] = useState<Region | "">("");
+  const [region, setRegion] = useState<Province | "">("");
   const [productId, setProductId] = useState<string>(products[0].id);
 
   const selected = useMemo(() => products.find((p) => p.id === productId)!, [productId]);
@@ -15,6 +45,7 @@ export const AngolaQuotes = () => {
   );
 
   const topChips = products.slice(0, 8);
+  const coords = region ? PROVINCE_COORDS[region] : null;
 
   return (
     <section className="section-y border-t border-border bg-secondary/30">
@@ -58,11 +89,11 @@ export const AngolaQuotes = () => {
             <div className="mt-4 relative">
               <select
                 value={region}
-                onChange={(e) => setRegion(e.target.value as Region)}
+                onChange={(e) => setRegion(e.target.value as Province)}
                 className="input-base appearance-none pr-10"
               >
                 <option value="">Província</option>
-                {regions.map((r) => (
+                {ALL_PROVINCES.map((r) => (
                   <option key={r} value={r}>
                     {r}
                   </option>
@@ -107,12 +138,44 @@ export const AngolaQuotes = () => {
           transition={{ duration: 0.6 }}
           className="relative h-full flex items-center justify-center"
         >
-          <img
-            src={angolaMap}
-            alt="Mapa de Angola com províncias"
-            className="max-h-full w-auto max-w-full object-contain drop-shadow-2xl"
-            loading="lazy"
-          />
+          <div className="relative w-full h-full flex items-center justify-center">
+            <img
+              src={angolaMap}
+              alt="Mapa de Angola com províncias"
+              className="max-h-full w-auto max-w-full object-contain drop-shadow-2xl"
+              loading="lazy"
+            />
+
+            <AnimatePresence>
+              {coords && (
+                <motion.div
+                  key={region}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  style={{
+                    position: "absolute",
+                    left: `${coords[0]}%`,
+                    top: `${coords[1]}%`,
+                    transform: "translate(-50%, -50%)",
+                    pointerEvents: "none",
+                  }}
+                >
+                  <span className="relative flex h-5 w-5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-70" />
+                    <span className="relative inline-flex rounded-full h-5 w-5 bg-primary border-2 border-white shadow-lg" />
+                  </span>
+                  <span
+                    className="absolute left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap rounded-md bg-primary px-2 py-0.5 text-[11px] font-bold text-white shadow"
+                    style={{ top: "100%" }}
+                  >
+                    {region}
+                  </span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </motion.div>
       </div>
     </section>
