@@ -42,7 +42,7 @@ export const Navbar = () => {
       <div className="container-x flex h-[72px] items-center justify-between">
         <Logo />
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-7 ml-10">
           {links.map((l) =>
             l.anchor ? (
               <a

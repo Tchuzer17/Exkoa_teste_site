@@ -15,16 +15,17 @@ export interface Product {
   stockKg: number;
   region: Region;
   icon: LucideIcon;
+  image?: string;
   description: string;
 }
 
 export const products: Product[] = [
-  { id: "milho",       name: "Milho",            category: "Cereais",     pricePerKg:  450, pricePerTon:  390000, stockKg: 12000, region: "Huambo",   icon: Wheat,     description: "Milho amarelo de primeira qualidade, ideal para ração e farinha." },
-  { id: "soja",        name: "Soja",             category: "Leguminosas", pricePerKg:  720, pricePerTon:  640000, stockKg:  8400, region: "Malanje",  icon: Bean,      description: "Grão de soja não-OGM, alto teor proteico." },
-  { id: "feijao",      name: "Feijão",           category: "Leguminosas", pricePerKg:  980, pricePerTon:  870000, stockKg:  5200, region: "Huíla",    icon: Bean,      description: "Feijão preto selecionado, embalagem 50kg." },
-  { id: "arroz",       name: "Arroz",            category: "Cereais",     pricePerKg:  650, pricePerTon:  580000, stockKg: 18000, region: "Luanda",   icon: CircleDot, description: "Arroz branco longo grão, polido e limpo." },
-  { id: "acucar",      name: "Açúcar",           category: "Outros",      pricePerKg:  580, pricePerTon:  510000, stockKg: 22000, region: "Benguela", icon: CircleDot, description: "Açúcar cristal refinado." },
-  { id: "sal",         name: "Sal",              category: "Outros",      pricePerKg:  120, pricePerTon:   95000, stockKg: 30000, region: "Benguela", icon: CircleDot, description: "Sal marinho refinado iodado." },
+  { id: "sal",         name: "Sal",              category: "Outros",      pricePerKg:  120, pricePerTon:   95000, stockKg: 30000, region: "Benguela", icon: CircleDot, image: "/commodity-sal.jpg",    description: "Sal marinho refinado iodado." },
+  { id: "arroz",       name: "Arroz",            category: "Cereais",     pricePerKg:  650, pricePerTon:  580000, stockKg: 18000, region: "Luanda",   icon: CircleDot, image: "/commodity-arroz.jpg",  description: "Arroz branco longo grão, polido e limpo." },
+  { id: "feijao",      name: "Feijão",           category: "Leguminosas", pricePerKg:  980, pricePerTon:  870000, stockKg:  5200, region: "Huíla",    icon: Bean,      image: "/commodity-feijao.jpg", description: "Feijão preto selecionado, embalagem 50kg." },
+  { id: "soja",        name: "Soja",             category: "Leguminosas", pricePerKg:  720, pricePerTon:  640000, stockKg:  8400, region: "Malanje",  icon: Bean,      image: "/commodity-soja.jpg",   description: "Grão de soja não-OGM, alto teor proteico." },
+  { id: "milho",       name: "Milho",            category: "Cereais",     pricePerKg:  450, pricePerTon:  390000, stockKg: 12000, region: "Huambo",   icon: Wheat,     image: "/commodity-milho.jpg",  description: "Milho amarelo de primeira qualidade, ideal para ração e farinha." },
+  { id: "acucar",      name: "Açúcar",           category: "Outros",      pricePerKg:  580, pricePerTon:  510000, stockKg: 22000, region: "Benguela", icon: CircleDot, image: "/commodity-acucar.jpg", description: "Açúcar cristal refinado." },
   { id: "oleo-palma",  name: "Óleo de Palma",    category: "Óleos",       pricePerKg: 1100, pricePerTon:  980000, stockKg:  6400, region: "Cabinda",  icon: Droplet,   description: "Óleo de palma vermelho, prensado a frio." },
   { id: "cafe",        name: "Café",             category: "Outros",      pricePerKg: 2400, pricePerTon: 2150000, stockKg:  3200, region: "Huambo",   icon: Coffee,    description: "Café arábica torrado, origem Gabela." },
   { id: "cacau",       name: "Cacau",            category: "Outros",      pricePerKg: 2800, pricePerTon: 2500000, stockKg:  2100, region: "Cabinda",  icon: Cookie,    description: "Sementes de cacau fermentadas e secas." },
